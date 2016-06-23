@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# this will load data into Restaurant model
+restaurents = DataFetch::Main.get_restaurents
+restaurents["businesses"].each do |restaurent|
+	Restaurant.create(name: restaurent["name"], reviews_count: restaurent["review_count"], latitude: restaurent["latitude"],
+	 longitude: restaurent["longitude"], city: restaurent["city"], state: restaurent["state"], zip_code: restaurent["zip"],
+	 avg_rating: restaurent["avg_rating"])
+end
