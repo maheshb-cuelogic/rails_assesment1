@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+restaurant_data = JSON.parse(DataFetch::Main.get_restaurents)
+restaurant_data.each do |restaurant|
+	Restaurant.create(restaurant)
+end
