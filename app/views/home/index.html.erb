@@ -1,3 +1,20 @@
 <div id="test">
 	The data will load here.
 </div>
+
+<br>
+<br>
+
+<% unless params[:d].present? and params[:d] == 'true' %>	
+	<%= link_to 'import data', restaurants_path, :method => 'POST' %>
+<% else %>
+	<p> Data Imported For All Restaurants. </p>
+<% end %>
+
+<br>
+<br>
+
+
+<% if Restaurant.count > 0 %>
+<%= link_to 'view JSON data', api_v1_restaurants_path %>
+<% end %>	

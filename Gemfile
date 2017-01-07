@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 gem 'jquery-rails'
 gem 'rest-client'
+gem 'pry'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
