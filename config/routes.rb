@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  
   root :to => "home#index"
 
-  namespace :api do
-    namespace :v1 do
-      resources :restaurants, only: [:index], defaults: { format: 'json' }
+  scope '/api' do
+    scope '/v1' do
+      get "/restaurants" => "api/v1/restaurants#index"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

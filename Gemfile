@@ -29,10 +29,9 @@ gem 'spring',        group: :development
 gem 'jquery-rails'
 gem 'rest-client'
 
-
 # for debugging
 group :development, :test do
-	gem 'pry'
+  gem 'pry'
   gem 'rubocop'
 end
 # Use ActiveModel has_secure_password

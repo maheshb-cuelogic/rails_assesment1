@@ -1,7 +1,8 @@
 class Api::V1::RestaurantsController < ApplicationController
-	def index
-		data = Restaurant.get_restaurant_data
-		render :json => data
-	end
-
+  
+  def index
+    restaurant_data = Restaurant.get_restaurant_data
+    render json: restaurant_data
+  end
+  
 end
