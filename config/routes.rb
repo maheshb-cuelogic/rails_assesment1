@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  
   root :to => "home#index"
 
+  scope '/api' do
+    scope '/v1' do
+      get "/restaurants" => "api/v1/restaurants#index"
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
