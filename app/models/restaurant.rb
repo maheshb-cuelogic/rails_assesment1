@@ -6,7 +6,6 @@ class Restaurant < ActiveRecord::Base
     main_array = []
     data["businesses"].each do |restaurant|
       restaurant_data = { restaurant_name: restaurant["name"], review_count: restaurant["review_count"] }
-      main_array << restaurant_data
       restaurant_data['address'] = { latitude: restaurant["latitude"], longitude: restaurant["longitude"], city: restaurant["city"], state: restaurant["state"], zipcode: restaurant["zip"] }       
       restaurant_data['rating'] = restaurant["avg_rating"]
      main_array << restaurant_data 
