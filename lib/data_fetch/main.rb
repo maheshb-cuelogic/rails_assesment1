@@ -3,14 +3,13 @@ require 'socket'
 
 module DataFetch
   module Main
-    def self.get_restaurents
+    def self.get_restaurants(location=nil)
       begin
-        res = File.read("#{Rails.root}/public/cue_data.json")
-        res = ActiveSupport::JSON.decode(res)
-        return res
+        restaurants = $yelp_client.search(location, { term: 'food' })
+        {success: true, restaurants: restaurants.businesses}
       rescue Exception => e
         Rails.logger.info 'Bad Request' + e.message
-        return
+        {success: false, message: e.message}
       end
     end
   end
