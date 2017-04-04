@@ -1,0 +1,36 @@
+<% if @restaurants.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th> Restaurant Name </th>
+        <th> Review Count </th>
+        <th> Address </th>
+        <th> Rating </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td>
+            <%= restaurant[:name] %>
+          </td>
+
+          <td>
+            <%= restaurant[:review_count] %>
+          </td>
+
+          <td>
+            <%= render :partial => 'restaurant_address', :locals => {:address => restaurant[:address]} %>
+          </td>
+
+          <td>
+          <%= restaurant[:avg_rating] %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+ <p> No Record Found </p>
+<% end %>
+
