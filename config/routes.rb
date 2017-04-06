@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   root :to => "home#index"
 
+  get '/restaurents.json' => 'api/v1/restaurents#index'
   # The priority is based upon order of creation: first created -> highest priority.
+  #
+  #
+  # namespace :api do
+  #   namespace :v1 do
+  #     get '/restaurents.json' => 'restaurents#index'
+  #   end
+  # end
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
