@@ -1,0 +1,29 @@
+<h4>Restaurants</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>review_count</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>city</th>
+      <th>state</th>
+      <th>zip</th>
+      <th>avg_rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant[:name] %></td>
+        <td><%= restaurant[:review_count] %></td>
+        <td><%= restaurant[:latitude] %></td>
+        <td><%= restaurant[:longitude] %></td>
+        <td><%= restaurant[:city] %></td>
+        <td><%= restaurant[:state] %></td>
+        <td><%= restaurant[:zip] %></td>
+        <td><%= restaurant[:avg_rating] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
