@@ -15,5 +15,3 @@ module DataFetch
     end
   end
 end
-
-
